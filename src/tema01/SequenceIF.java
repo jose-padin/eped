@@ -1,7 +1,9 @@
 package tema01;
 
-//public interface SequenceIF extends CollectionIF<E> {
-public interface SequenceIF<E> {
+import tema01.CollectionIF;
+import tema01.IteratorIF;
+
+public interface SequenceIF<E> extends CollectionIF<E> {
 
 	public IteratorIF<E> iterator();
 }
