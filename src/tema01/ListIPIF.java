@@ -2,6 +2,13 @@ package tema01;
 
 import tema01.SequenceIF;
 
+/*
+ *  Diseñar un interfaz ListIPIF<E> que defina las operaciones de las Listas con
+ *  Punto de Interés (Interest Point). Recuerde que en este tipo de listas existe un
+ *  puntero que puede desplazarse hacia adelante y hacia atrás y que todas las
+ *  operaciones de consulta y modificación se realizan en la posición del puntero.
+ *  ¿Dónde situaría este interfaz en el mapa de TAD de la asignatura?
+ */
 public interface ListIPIF<E> extends SequenceIF<E> {
 
 	/*
