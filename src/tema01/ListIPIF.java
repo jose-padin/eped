@@ -8,6 +8,7 @@ import tema01.SequenceIF;
  *  puntero que puede desplazarse hacia adelante y hacia atrás y que todas las
  *  operaciones de consulta y modificación se realizan en la posición del puntero.
  *  ¿Dónde situaría este interfaz en el mapa de TAD de la asignatura?
+ *  Respuesta: estaría situado debajo de Sequence que, a su vez, estaría situado debajo de Collection.
  */
 public interface ListIPIF<E> extends SequenceIF<E> {
 
