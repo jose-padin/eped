@@ -18,15 +18,15 @@ public interface ListIPIF<E> extends SequenceIF<E> {
 	public void resetPointer();
 
 	/*
-	 * Return the next element in the list.
-	 * @Pre: there are elements in the list.
+	 * Return the element placed in the position of the iterator.
+	 * @Pre: !isEmpty().
 	 * @return: the next element.
 	 */
 	public E get();
 
 	/*
 	 * Modify the current position of the iterator with the value of e.
-	 * @param e The element to set.
+	 * @param e The element to be set.
 	 */
 	public void set(E e);
 
@@ -38,17 +38,28 @@ public interface ListIPIF<E> extends SequenceIF<E> {
 
 	/*
 	 * Remove the element in the position of the iterator.
+	 * return: true if the element has been removed. False otherwise.
 	 */
-	public void remove();
+	public boolean remove();
 
 	/*
 	 * Move the iterator one position backwards.
+	 * @Pre: !isEmpty() && hasPrevious().
+	 * @Post: the iterator is moved one position backwards.
 	 */
 	public void moveBackwards();
 
 	/*
 	 * Move the iterator one position forwards.
+	 * @Pre: !isEmpty()
+	 * @Post: the iterator is moved one position forwards.
 	 */
 	public void moveForwards();
+
+	/*
+	 * Check if there are elements before the iterator position.
+	 * @Pre: !isEmpty();
+	 */
+	public boolean hasPrevious();
 
 }
