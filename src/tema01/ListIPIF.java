@@ -13,9 +13,21 @@ import tema01.SequenceIF;
 public interface ListIPIF<E> extends SequenceIF<E> {
 
 	/*
-	 * Establish the pointer at the beginning of the list.
+	 * Return the pointer position.
+	 * @return: and integer indicating the pointer position in the list.
+	 */
+	public int getPointer();
+
+	/*
+	 * Establish the pointer at the beginning of the list. If the list is empty, do nothing.
 	 */
 	public void resetPointer();
+
+	/* Move the pointer to the end of the list.
+	 * @Pre: !isEmpty().
+	 * @Post: the pointer is at the end of the list, after the last element.
+	 */
+	public void moveToEnd();
 
 	/*
 	 * Return the element placed in the position of the iterator.
@@ -27,18 +39,23 @@ public interface ListIPIF<E> extends SequenceIF<E> {
 	/*
 	 * Modify the current position of the iterator with the value of e.
 	 * @param e The element to be set.
+	 * @Pre: !isEmpty().
+	 * @Post: size will remain the same.
 	 */
 	public void set(E e);
 
 	/*
 	 * Inserts the passed element in the current iterator position.
 	 * @param e The element to be inserted.
+	 * @Post: size++.
 	 */
 	public void insert(E e);
 
 	/*
 	 * Remove the element in the position of the iterator.
 	 * return: true if the element has been removed. False otherwise.
+	 * @Pre: !isEmpty().
+	 * @Post: size--.
 	 */
 	public boolean remove();
 
@@ -51,7 +68,7 @@ public interface ListIPIF<E> extends SequenceIF<E> {
 
 	/*
 	 * Move the iterator one position forwards.
-	 * @Pre: !isEmpty()
+	 * @Pre: !isEmpty() && getPointer() <= size;
 	 * @Post: the iterator is moved one position forwards.
 	 */
 	public void moveForwards();
