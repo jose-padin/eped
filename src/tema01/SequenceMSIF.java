@@ -4,6 +4,10 @@ package tema01;
 //secuencias con un tamaño máximo limitado (Max Size).
 //¿Dónde situaría este interfaz en el mapa de TAD de la asignatura?
 // La situaría debajo de Sequence. De este modo, hereda de Sequence (con su iterador) y de Collection.
+
+/* We do not include a method to set the max size because that is a behavior of the
+ * final implementation (the class)
+ */
 public interface SequenceMSIF {
 
 	/*
@@ -11,11 +15,6 @@ public interface SequenceMSIF {
 	 * return int The squence's max size.
 	 */
 	public int getMaxSize();
-
-	/*
-	 * Set the maximum allowed size.
-	 */
-	public void setMaxSize();
 
 	/*
 	 * Check if it is allowed to add more elements to the sequence.
