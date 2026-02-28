@@ -16,8 +16,8 @@ public interface ListHTIF<E> extends SequenceIF<E> {
 
 	/*
 	 * Insert an element in the list replacing the one existing in the passed position.
-	 * @Pre: !isEmpty().
-	 * @Pos: size == size() + 1.
+	 * @Pre: !isEmpty(). Sea s = size()
+	 * @Pos: size = s + 1.
 	 * @param e The element to be set as the head.
 	 * return: true if the element was inserted; false if not.
 	 */
@@ -28,7 +28,7 @@ public interface ListHTIF<E> extends SequenceIF<E> {
 	 * @Pre: !isEmpty().
 	 * return the head of a list.
 	 */
-	public ListHTIF<E> getHead();
+	public E getHead();
 
 	/*
 	 * Set the tail of a list.
