@@ -21,17 +21,24 @@ public class Main {
 			System.out.println(it.getNext());
 		}
 
-		System.out.printf("pointer: %d\n", list.getPointer());
-		list.moveForwards();
-		System.out.printf("pointer: %d\n", list.getPointer());
-		System.out.println(list.get());
-		list.moveForwards();
-		System.out.printf("pointer: %d\n", list.getPointer());
-		System.out.println(list.get());
+		// Removing
 		list.remove();
-		// It should print 4, 3, 1
+		list.remove();
 		it.reset();
-		System.out.println("**");
+		System.out.println("-----");
+		while (it.hasNext()) {
+			// It should print 2, 1
+			System.out.println(it.getNext());
+		}
+
+		System.out.printf("pointer: %d\n", list.getPointer());
+		list.moveForwards();
+		System.out.printf("pointer: %d\n", list.getPointer());
+		System.out.println(list.get());
+		System.out.printf("pointer: %d\n", list.getPointer());
+		list.remove();
+		it.reset();
+		System.out.println("---");
 		while (it.hasNext()) {
 			System.out.println(it.getNext());
 		}
