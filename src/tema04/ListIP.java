@@ -50,8 +50,13 @@ public class ListIP<E> extends Sequence<E> implements ListIPIF<E> {
 		} else if (this.pointer == this.size) {
 			NodeSequence newNode = new NodeSequence(e);
 			NodeSequence lastNode = this.getNode(this.pointer - 1);
-			lastNode.setNext(newNode);
 			newNode.setNext(lastNode.getNext());
+			lastNode.setNext(newNode);
+		} else {
+			NodeSequence prevNode = this.getNode(pointer - 1);
+			NodeSequence newNode = new NodeSequence(e);
+			newNode.setNext(prevNode.getNext());
+			prevNode.setNext(newNode);
 		}
 		this.size++;
 	}
@@ -77,11 +82,15 @@ public class ListIP<E> extends Sequence<E> implements ListIPIF<E> {
 	}
 
 	public void moveBackwards() {
-		this.pointer--;
+		if (this.pointer > this.size) {
+			this.pointer--;
+		}
 	}
 
 	public void moveForwards() {
-		this.pointer++;
+		if (this.pointer < this.size) {
+			this.pointer++;
+		}
 	}
 
 	public boolean hasPrevious() {
