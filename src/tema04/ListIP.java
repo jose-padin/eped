@@ -62,21 +62,13 @@ public class ListIP<E> extends Sequence<E> implements ListIPIF<E> {
 	}
 
 	public boolean remove() {
-		if (this.pointer == 1) {
-			this.firstNode = null;
+		if (this.pointer == 0) {
+			this.firstNode = this.firstNode.getNext();
 			return true;
 		}
 
-		NodeSequence node = this.firstNode;
-		NodeSequence prevNode = null;
-
-		for (int i = 0; i < this.pointer; i++) {
-			if (i == this.pointer - 1) {
-				prevNode = node;
-			}
-			node = node.getNext();
-		}
-		prevNode.setNext(node.getNext());
+		NodeSequence prevNode = this.getNode(pointer - 1);
+		prevNode.setNext(prevNode.getNext().getNext());
 		this.size--;
 		return true;
 	}
