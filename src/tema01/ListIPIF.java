@@ -14,7 +14,7 @@ public interface ListIPIF<E> extends SequenceIF<E> {
 
 	/*
 	 * Return the pointer position.
-	 * @return: and integer indicating the pointer position in the list.
+	 * @return: an integer indicating the pointer position in the list.
 	 */
 	public int getPointer();
 
