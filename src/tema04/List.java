@@ -64,15 +64,13 @@ public class List<E> extends Sequence<E> implements ListIF<E> {
 	Compare el coste asintótico temporal en el caso peor de ambas
 	implementaciones.
 	*/
-    /* Implementación a */
+    /* Implementación b */
 	public ListIF<E> invierte(ListIF<E> l) {
 		ListIF<E> newList = new List<E>();
-		IteratorIF it = l.iterator();
-
-		while (it.hasNext()) {
-			E value = (E) it.getNext();
-			newList.insert(1, value);
+		for (int i = 1; i <= l.size(); i++) {
+			newList.insert(1, l.get(i));
 		}
+
 		return newList;
 	}
 }
