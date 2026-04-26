@@ -94,7 +94,7 @@ public abstract class Sequence<E> extends Collection<E> implements SequenceIF<E>
 
 	protected NodeSequence getNode(int i) {
 		NodeSequence node = this.firstNode;
-		for (int aux = 0; aux < i; aux++) {
+		for (int aux = 1; aux < i; aux++) {
 			node = node.getNext();
 		}
 		return node;
