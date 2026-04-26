@@ -15,17 +15,6 @@ public class Main {
 		list.insert(2, 2);
 		list.insert(3, 3);
 		list.insert(4, 4);
-
-		IteratorIF it = list.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.getNext());
-		}
-		System.out.println("---");
-
-		ListIF<Integer> inverted = list.invierte(list);
-		IteratorIF it2 = inverted.iterator();
-		while (it2.hasNext()) {
-			System.out.println(it2.getNext());
-		}
+		System.out.println(list.isSorted());
 	}
 }
