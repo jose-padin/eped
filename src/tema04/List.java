@@ -73,4 +73,15 @@ public class List<E> extends Sequence<E> implements ListIF<E> {
 
 		return newList;
 	}
+
+	public boolean isSorted() {
+		NodeSequence current = this.firstNode;
+		while (current != null && current.getNext() != null) {
+			if ((int) current.getValue() > (int) current.getNext().getValue()) {
+				return false;
+			}
+			current = current.getNext();
+		}
+		return true;
+	}
 }
